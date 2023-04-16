@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+body {
+  background-color: #030303; /* fallback for old browsers */
+  color: rgba(255, 255, 255, 0.65);
+}
+
+@font-face {
+  font-family: "Undeveloped";
+  src: url("../fonts/Undeveloped.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Calculator";
+  src: url("../fonts/Calculator.ttf") format("truetype");
+}
+
+/* Animations */
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}

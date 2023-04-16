@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxtjs/tailwindcss": "^6.2.0",
+    "nuxt": "^3.0.0"
+  },
+  "dependencies": {
+    "@emailjs/browser": "^3.10.0",
+    "@formkit/icons": "^0.16.4",
+    "@formkit/nuxt": "^0.16.4",
+    "@formkit/themes": "^0.16.4"
+  }
+}
