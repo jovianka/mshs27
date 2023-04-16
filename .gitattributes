@@ -1,7 +1,0 @@
-assets/images !text !filter !merge !diff
-assets/images/mic.jpg filter=lfs diff=lfs merge=lfs -text
-assets/images/mountains.jpg filter=lfs diff=lfs merge=lfs -text
-assets/images/ramen.jpg filter=lfs diff=lfs merge=lfs -text
-assets/images/arrow-down-circle-fill.svg filter=lfs diff=lfs merge=lfs -text
-assets/images/djyea.jpg filter=lfs diff=lfs merge=lfs -text
-assets/images/logo-transparent-bg-gold.svg filter=lfs diff=lfs merge=lfs -text
