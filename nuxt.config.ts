@@ -11,6 +11,12 @@ export default defineNuxtConfig({
     '@nuxt/image-edge',
     '@formkit/nuxt',
   ],
+  image: {
+    provider: 'imagekit',
+    imagekit: {
+      baseURL: 'https://ik.imagekit.io/c8l1fmjugx/'
+    }
+  },
   app: {
     head: {
       title: "Hirallaxe | MSHS 27",

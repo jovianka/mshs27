@@ -6,7 +6,7 @@
       <header class="absolute w-full z-10">
         <nav class="p-6 flex flex-row justify-center">
           <div class="flex flex-row justify-start items-center">
-            <img src="../assets/images/logo-transparent-bg-gold.svg" alt="" class="w-16 sm:w-12 m-3 outline-2 outline outline-[#DBC07A]" />
+            <nuxt-img src="logo-transparent-bg-gold.svg" alt="" class="w-16 sm:w-12 m-3 outline-2 outline outline-[#DBC07A]" />
             <h1 class="font-display font-bold text-xl sm:text-2xl text-white/[0.87]">MSHS 27 PROM NIGHT</h1>
           </div>
         </nav>
@@ -15,7 +15,7 @@
     
     <template #default>
       <main>
-        <section class="relative min-h-screen flex flex-col justify-center bg-cover bg-center bg-[url('/assets/images/mountains.jpg')] overflow-hidden">
+        <section class="relative min-h-screen flex flex-col justify-center bg-cover bg-center bg-[url('https://ik.imagekit.io/c8l1fmjugx/mountains.jpg')] overflow-hidden">
           <div class="absolute bg-black/50 backdrop-blur-[5px] w-full h-full"></div>
           <SaveTheDate />
         </section>
@@ -32,17 +32,17 @@
           <h1 class="font-display text-center text-3xl sm:text-4xl lg:text-5xl mb-12 leading-relaxed">Ada Apa Aja?</h1>
           <div class="flex flex-row flex-wrap justify-center gap-12">
             <Card>
-              <template #image><img src="../assets/images/ramen.jpg" /></template>
+              <template #image><nuxt-img format="webp" src="ramen.jpg" /></template>
               <template #title>Vr Vr Good Food</template>
               <template #body>Kita akan bersama-sama menikmati makanan yang disajikan dengan cara prasmanan!</template>
             </Card>
             <Card>
-              <template #image><img src="../assets/images/mic.jpg" /></template>
+              <template #image><nuxt-img format="webp" src="mic.jpg" /></template>
               <template #title>Penampilan dari Antara Kita-kita!</template>
               <template #body>Banyak band dan modern dance!</template>
             </Card>
             <Card>
-              <template #image><img src="../assets/images/djyea.jpg" /></template>
+              <template #image><nuxt-img format="webp" src="djyea.jpg" /></template>
               <template #title>DJ! DJ! DJ!</template>
               <template #body><i>Prom night</i> ini akan dimeriahkan juga seorang DJ!</template>
             </Card>
