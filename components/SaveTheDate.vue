@@ -10,10 +10,6 @@
     leading-loose sm:leading-loose md:leading-loose lg:leading-relaxed sm:tracking-wider">
       09 ~ JUNE ~ 2023
     </time>
-    <div class="flex flex-col sm:flex-row items-center text-white/[0.7]">
-      <div class="sm:pr-2 sm:border-r-2">Harris Convention Hall Bekasi </div>
-      <time class="sm:pl-2 sm:border-l-2">18:30 s.d. 22:00 WIB</time>
-    </div>
     <Countdown class="mt-5" />
   </div>
 </template>
