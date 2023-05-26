@@ -10,7 +10,12 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxt/image-edge',
     '@formkit/nuxt',
+    'nuxt-swiper',
   ],
+  swiper: {
+    prefix: 'Swiper',
+    modules: ['navigation', 'pagination', 'virtual', 'effect-flip', 'effect-coverflow', 'keyboard']
+  },
   image: {
     provider: 'imagekit',
     imagekit: {
