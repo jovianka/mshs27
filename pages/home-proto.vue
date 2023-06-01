@@ -1,6 +1,6 @@
 <template>
   <ClientOnly>
-    <GraduateCap />
+    <GraduateCap/>
   </ClientOnly>
 </template>
 
