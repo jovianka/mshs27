@@ -44,7 +44,7 @@
             <Card>
               <template #image><nuxt-img format="webp" src="djyea.jpg" /></template>
               <template #title>DEEJAY</template>
-              <template #body><i>Prom night</i>DEEEEEEJAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY!</template>
+              <template #body>DEEEEEEJAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY!</template>
             </Card>
           </div>
         </section>
