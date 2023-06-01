@@ -33,18 +33,18 @@
           <div class="flex flex-row flex-wrap justify-center gap-12">
             <Card>
               <template #image><nuxt-img format="webp" src="ramen.jpg" /></template>
-              <template #title>Vr Vr Good Food</template>
-              <template #body>Kita akan bersama-sama menikmati makanan yang disajikan dengan cara prasmanan!</template>
+              <template #title>Very-very Good Food</template>
+              <template #body>Kita akan menikmati makanan yang disajikan dengan cara prasmanan!</template>
             </Card>
             <Card>
               <template #image><nuxt-img format="webp" src="mic.jpg" /></template>
-              <template #title>Penampilan dari Antara Kita-kita!</template>
-              <template #body>Banyak band dan modern dance!</template>
+              <template #title>Penampilan dari MSHS 27</template>
+              <template #body>Band dan modern dance!</template>
             </Card>
             <Card>
               <template #image><nuxt-img format="webp" src="djyea.jpg" /></template>
-              <template #title>DJ! DJ! DJ!</template>
-              <template #body><i>Prom night</i> ini akan dimeriahkan juga seorang DJ!</template>
+              <template #title>DEEJAY</template>
+              <template #body><i>Prom night</i>DEEEEEEJAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY!</template>
             </Card>
           </div>
         </section>
