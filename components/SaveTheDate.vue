@@ -8,7 +8,7 @@
     font-bold text-transparent bg-clip-text bg-gradient-to-tr from-gray-600 to-white
     text-[2.1rem] sm:text-6xl md:text-7xl lg:text-8xl
     leading-loose sm:leading-loose md:leading-loose lg:leading-relaxed sm:tracking-wider">
-      09 ~ JUNE ~ 2023
+      JUNE ~ 09 ~ 2023
     </time>
     <Countdown class="mt-5" />
   </div>
