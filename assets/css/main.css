@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Work+Sans&display=swap');
 
 :root {
   --swiper-theme-color: rgb(219, 189, 39) !important;
@@ -18,13 +18,8 @@ body {
 }
 
 @font-face {
-  font-family: "Undeveloped";
-  src: url("../fonts/Undeveloped.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Calculator";
-  src: url("../fonts/Calculator.ttf") format("truetype");
+  font-family: "Code Next";
+  src: url("../fonts/CodeNext/WEB/CodeNext-ExtraBold.woff2") format("woff2");
 }
 
 /* Animations */

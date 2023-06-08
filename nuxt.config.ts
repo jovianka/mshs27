@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   modules: [
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/device',
     '@nuxt/image-edge',
     '@formkit/nuxt',
     'nuxt-swiper',

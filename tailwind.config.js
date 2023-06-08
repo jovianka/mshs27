@@ -23,8 +23,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["Libre Baskerville"],
-        time: ["Calculator"]
+        display: ["Code Next"],
       }
     },
   },
