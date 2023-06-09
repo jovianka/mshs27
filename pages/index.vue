@@ -56,7 +56,7 @@ definePageMeta({
 async function submitPromQuestion(fields: any) {
   try {
     const res = await emailjs.send("prom_questions", "template_prom_questions", fields, config.public.EMAILJS_PUBLIC_KEY);
-    await alert(res ? "Pertanyaan anda telah kami terima! Mohon tunggu jawaban kami :D" : "Ada kesalahan dalam pengiriman pertanyaan :(");
+    await alert(res ? "Pertanyaan anda telah kami terima. Mohon tunggu jawaban kami." : "Ada kesalahan dalam pengiriman pertanyaan :(");
   } catch(err) {
     console.log(err)
     alert("Ada kesalahan dalam pengiriman pertanyaan :(")
