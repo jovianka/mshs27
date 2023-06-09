@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@nuxtjs/device',
     '@nuxt/image-edge',
+    '@nuxt/content',
     '@formkit/nuxt',
     'nuxt-swiper',
   ],
