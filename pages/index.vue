@@ -7,7 +7,7 @@
         <nav class="p-6 flex flex-row justify-center">
           <div class="flex flex-row justify-start items-center">
             <nuxt-img src="logo-transparent-bg-gold.svg" alt="" class="w-16 sm:w-12 m-3 outline-2 outline outline-[#DBC07A]" />
-            <h1 class="font-display font-bold text-xl sm:text-2xl text-white/[0.87]">MSHS 27 PROM NIGHT</h1>
+            <h1 class="font-display font-bold text-xl sm:text-2xl text-white/[0.87]">MSHS 27 HIRALLAXE</h1>
           </div>
         </nav>
       </header>
@@ -19,35 +19,14 @@
           <div class="absolute bg-black/50 backdrop-blur-[5px] w-full h-full"></div>
           <SaveTheDate />
         </section>
-        <div class="absolute bottom-7 flex justify-center w-full">
+        <!-- <div class="absolute bottom-7 flex justify-center w-full">
           <button @click="useSmoothScrollTo('details')" class="w-max text-white/[0.5] flex flex-row justify-center items-center hover:text-white/[0.7] transition-all">
             <h2 class="mr-2 text-lg">Details</h2>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-circle-fill" viewBox="0 0 16 16">
               <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v5.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V4.5z"/>
             </svg>
           </button>
-        </div>
-    
-        <section id="details" class="my-24 px-6 sm:px-24">
-          <h1 class="font-display text-center text-3xl sm:text-4xl lg:text-5xl mb-12 leading-relaxed">Ada Apa Aja?</h1>
-          <div class="flex flex-row flex-wrap justify-center gap-12">
-            <Card>
-              <template #image><nuxt-img format="webp" src="ramen.jpg" /></template>
-              <template #title>Very-very Good Food</template>
-              <template #body>Kita akan menikmati makanan yang disajikan dengan cara prasmanan!</template>
-            </Card>
-            <Card>
-              <template #image><nuxt-img format="webp" src="mic.jpg" /></template>
-              <template #title>Penampilan dari MSHS 27</template>
-              <template #body>Band dan modern dance!</template>
-            </Card>
-            <Card>
-              <template #image><nuxt-img format="webp" src="djyea.jpg" /></template>
-              <template #title>DEEJAY</template>
-              <template #body>DEEEEEEJAYYYYYYYYYYYYYYYYY!</template>
-            </Card>
-          </div>
-        </section>
+        </div> -->
         <section id="contactUs" class="my-24 px-6 sm:px-24">
           <h1 class="font-display text-2xl mb-6 leading-relaxed text-center sm:text-start">Ada Pertanyaan?</h1>
           <div>
