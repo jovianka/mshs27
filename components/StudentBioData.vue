@@ -1,25 +1,26 @@
 <template>
   <div :key="componentKey">
-    {{ studentName() }}
-    {{ swiper.realIndex }}
+    <p>{{ studentName() }}</p>
+    <p>{{ studentSocialMedia() }}</p>
+    <p>{{ studentQuotes() }}</p>
   </div>
 </template>
 
 <script setup lang="ts">
 
-  let componentKey = ref(0)
+  const props = defineProps(["studentCount", "studentClass"])
 
+  let componentKey = ref(0)
   const swiper = useSwiper()
 
   swiper.value.on('slideChange', () => {
     componentKey.value += 1
   })
 
-  defineProps(["numberOfStudents"])
 
   const { data }: any = await useAsyncData('biodata', () => queryContent('/biodata').findOne())
 
-
+  // SORT BIODATA
   function sortBiodataByName(a: any, b: any) {
     const nameA = a.namaLengkap.toUpperCase(); // ignore upper and lowercase
     const nameB = b.namaLengkap.toUpperCase(); // ignore upper and lowercase
@@ -36,7 +37,19 @@
 
   const studentName = () => {
     return data._rawValue.body
-            .filter((orang: any) => orang.kelas == "XII IPA 3")
+            .filter((student: any) => student.kelas == props.studentClass)
+            .sort(sortBiodataByName)[swiper.value.realIndex].namaLengkap
+  }
+
+  const studentSocialMedia = () => {
+    return data._rawValue.body
+            .filter((orang: any) => orang.kelas == props.studentClass)
+            .sort(sortBiodataByName)[swiper.value.realIndex].medsos
+  }
+
+  const studentQuotes = () => {
+    return data._rawValue.body
+            .filter((orang: any) => orang.kelas == props.studentClass)
             .sort(sortBiodataByName)[swiper.value.realIndex].kesanPesan
   }
 

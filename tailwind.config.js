@@ -24,6 +24,7 @@ module.exports = {
     extend: {
       fontFamily: {
         display: ["Code Next"],
+        body: ["Libre Baskerville"]
       }
     },
   },
