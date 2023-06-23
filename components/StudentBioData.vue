@@ -1,23 +1,16 @@
 <template>
-  <div :key="componentKey">
-    <p>{{ studentName() }}</p>
-    <p>{{ studentSocialMedia() }}</p>
-    <p>{{ studentQuotes() }}</p>
+  <div class="font-body text-center flex flex-col items-center">
+    <h2 class="font-script font-semibold text-3xl text-white/90 mb-3 px-5">{{ student().namaLengkap }} ({{ student().namaPanggilan }})</h2>
+    <div class="w-4/5 bg-yellow-900">
+      <p>Instagram: {{ student().medsos }}</p>
+      <p>{{ student().kesanPesan }}</p>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 
-  const props = defineProps(["studentCount", "studentClass"])
-
-  let componentKey = ref(0)
-  const swiper = useSwiper()
-
-  swiper.value.on('slideChange', () => {
-    componentKey.value += 1
-  })
-
-
+  const props = defineProps(["studentClass", "studentNumber"])
   const { data }: any = await useAsyncData('biodata', () => queryContent('/biodata').findOne())
 
   // SORT BIODATA
@@ -35,24 +28,11 @@
     return 0
   }
 
-  const studentName = () => {
+  const student = () => {
     return data._rawValue.body
             .filter((student: any) => student.kelas == props.studentClass)
-            .sort(sortBiodataByName)[swiper.value.realIndex].namaLengkap
+            .sort(sortBiodataByName)[props.studentNumber]
   }
-
-  const studentSocialMedia = () => {
-    return data._rawValue.body
-            .filter((orang: any) => orang.kelas == props.studentClass)
-            .sort(sortBiodataByName)[swiper.value.realIndex].medsos
-  }
-
-  const studentQuotes = () => {
-    return data._rawValue.body
-            .filter((orang: any) => orang.kelas == props.studentClass)
-            .sort(sortBiodataByName)[swiper.value.realIndex].kesanPesan
-  }
-
 
 </script>
 

@@ -23,8 +23,9 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        display: ["Code Next"],
-        body: ["Libre Baskerville"]
+        display: "Code Next",
+        script: "Dancing Script",
+        body: "Lora"
       }
     },
   },

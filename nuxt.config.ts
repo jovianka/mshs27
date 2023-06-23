@@ -16,7 +16,7 @@ export default defineNuxtConfig({
   ],
   swiper: {
     prefix: 'Swiper',
-    modules: ['navigation', 'pagination', 'virtual', 'effect-flip', 'effect-coverflow', 'keyboard']
+    modules: ['navigation', 'pagination', 'virtual', 'effect-flip', 'effect-coverflow', 'keyboard', "autoplay", "effect-cards"]
   },
   image: {
     provider: 'imagekit',
