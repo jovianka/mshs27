@@ -1,8 +1,15 @@
 <template>
   <div class="font-body text-center flex flex-col items-center">
-    <h2 class="font-script font-semibold text-3xl text-white/90 mb-3 px-5">{{ student().namaLengkap }} ({{ student().namaPanggilan }})</h2>
-    <div class="w-4/5 bg-yellow-900">
-      <p>Instagram: {{ student().medsos }}</p>
+    <div class="w-4/5
+      bg-red500 font-script font-semibold
+      text-3xl text-white/90
+      mt-9 mb-5 px-5">
+      <h2>{{ studentNumber }}</h2>
+      <h2 class="">
+        {{ student().namaLengkap }} ({{ student().namaPanggilan }})
+      </h2>
+    </div>
+    <div class="w-4/5 bg--900">
       <p>{{ student().kesanPesan }}</p>
     </div>
   </div>

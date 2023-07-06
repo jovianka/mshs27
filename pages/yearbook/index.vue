@@ -1,30 +1,53 @@
 <template>
   <div class=" min-h-[200vh]">
-    <div class="lg:px-60 lg:pt-28">
-    <h1 class="text-center text-2xl">IPA1</h1>
-    <SlideBiodata studentClass="IPA1" class="mb-24" :studentCount="33" />
-    <h1 class="text-center text-2xl">IPA2</h1>
-    <SlideBiodata studentClass="IPA2" class="mb-24" :studentCount="33" />
-    <!-- <h1 class="text-center text-2xl">IPA3</h1>
-    <SlideBiodata studentClass="IPA3" class="mb-24" :studentCount="33" />
-    <h1 class="text-center text-2xl">IPA4</h1>
-    <SlideBiodata studentClass="IPA4" class="mb-24" :studentCount="33" />
-    <h1 class="text-center text-2xl">IPS1</h1>
-    <SlideBiodata studentClass="IPS1" class="mb-24" :studentCount="33" />
-    <h1 class="text-center text-2xl">IPS2</h1>
-    <SlideBiodata studentClass="IPS2" class="mb-24" :studentCount="33" />
-    <h1 class="text-center text-2xl">IPS3</h1>
-    <SlideBiodata studentClass="IPS3" class="mb-24" :studentCount="33" />
-    <h1 class="text-center text-2xl">IPS4</h1>
-    <SlideBiodata studentClass="IPS4" class="mb-24" :studentCount="33" />
-    <h1 class="text-center text-2xl">IPS5</h1>
-    <SlideBiodata studentClass="IPS5" class="mb-24" :studentCount="33" /> -->
+    <div class="lg:px-72">
+      <SlideBiodata studentClass="IPA3" class="mb-24" :studentCount="33" />
+      <div>mouseX = {{ mouseX }}</div>
+      <div>mouseY = {{ mouseY }}</div>
+      <div ref="cursorTrailers">
+        <div class="cursorTrailer rounded-full bg-white w-6 h-6 fixed z-50 pointer-events-none"></div>
+        <div class="cursorTrailer rounded-full bg-white w-6 h-6 fixed z-50 pointer-events-none"></div>
+        <div class="cursorTrailer rounded-full bg-white w-6 h-6 fixed z-50 pointer-events-none"></div>
+        <div class="cursorTrailer rounded-full bg-white w-6 h-6 fixed z-50 pointer-events-none"></div>
+        <div class="cursorTrailer rounded-full bg-white w-6 h-6 fixed z-50 pointer-events-none"></div>
+        <div class="cursorTrailer rounded-full bg-white w-6 h-6 fixed z-50 pointer-events-none"></div>
+        <div class="cursorTrailer rounded-full bg-white w-6 h-6 fixed z-50 pointer-events-none"></div>
+        <div class="cursorTrailer rounded-full bg-white w-6 h-6 fixed z-50 pointer-events-none"></div>
+        <div class="cursorTrailer rounded-full bg-white w-6 h-6 fixed z-50 pointer-events-none"></div>
+        <div class="cursorTrailer rounded-full bg-white w-6 h-6 fixed z-50 pointer-events-none"></div>
+      </div>
 
     </div>
   </div >
 </template>
 
 <script setup lang="ts">
+  let mouseX = ref(0)
+  let mouseY = ref(0)
+  const cursorTrailers = ref<HTMLDivElement | null>(null)
+
+  onMounted(() => {
+    window.addEventListener('mousemove', (e) => {
+      if (cursorTrailers.value) {
+        cursorTrailers.value.querySelectorAll(".cursorTrailer").forEach((cursorTrailer, arrIndex) => {
+          mouseX.value = e.clientX - cursorTrailer.clientWidth / 2
+          mouseY.value = e.clientY - cursorTrailer.clientHeight / 2
+          
+          let trailingCursorDelay = {
+            left: `${mouseX.value}px`,
+            top: `${mouseY.value}px`,
+            transform: `scale(${(10 - arrIndex) / 10})`
+          }
+          
+          cursorTrailer.animate(trailingCursorDelay, {
+            duration: arrIndex * 15,
+            fill: "forwards"
+          })
+        });
+      }
+    })
+
+  })
 
 </script>
 

@@ -2,9 +2,8 @@
   <div>
     <Swiper
     :watch-slides-progress="true"
-    :modules="[SwiperNavigation, SwiperPagination, SwiperVirtual, SwiperEffectCoverflow, SwiperKeyboard, SwiperAutoplay, SwiperEffectCards]"
+    :modules="[SwiperNavigation, SwiperVirtual, SwiperEffectCoverflow, SwiperKeyboard, SwiperAutoplay, SwiperEffectCards]"
     :slides-per-view="isMobile ? 1 : 3"
-    :pagination="{ dynamicBullets: true, type: 'bullets'}"
     :allow-slide-next="true"
     :allow-slide-prev="true"
     :keyboard="{ enabled: true, onlyInViewport: true }" 
@@ -13,17 +12,16 @@
     :effect="isMobile ? '' : 'coverflow'"
     :autoplay="{ delay: 4000, }"
     @autoplay-time-left=""
-    @slide-change="(swiper) => {studentNumber = swiper.realIndex}"
-    @swiper="(swiper) => {studentNumber = swiper.realIndex}"
+    @slide-change="(swiper: any) => {studentNumber = swiper.realIndex}"
+    @swiper="(swiper: any) => {studentNumber = swiper.realIndex}"
     class="select-none">
       <SwiperSlide v-if="!isMobile"></SwiperSlide>
       <SwiperSlide v-for="slide in studentCount" :key="slide">
-        <nuxt-img :src="`yearbook/foto-biodata/${studentClass}/${slide}.JPG`"
-        class="px-11 pt-11 pb-10 sm:p-2 sm:pb-12" />
+        <nuxt-img :src="`yearbook/foto-biodata/${studentClass}/${slide}.JPG`" class="border-8 border-yellow-400" />
       </SwiperSlide>
       <SwiperSlide v-if="!isMobile"></SwiperSlide>
     </Swiper>
-    <StudentBioData :studentNumber="studentNumber" :studentClass="studentClass" class="pb-10" />
+    <StudentBioData :studentNumber="studentNumber" :studentClass="studentClass" />
   </div>
 </template>
 
