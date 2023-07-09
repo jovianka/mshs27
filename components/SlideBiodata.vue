@@ -14,10 +14,11 @@
     @autoplay-time-left=""
     @slide-change="(swiper: any) => {studentNumber = swiper.realIndex}"
     @swiper="(swiper: any) => {studentNumber = swiper.realIndex}"
+    :touch-start-prevent-default="false"
     class="select-none">
       <SwiperSlide v-if="!isMobile"></SwiperSlide>
       <SwiperSlide v-for="slide in studentCount" :key="slide">
-        <nuxt-img :src="`yearbook/foto-biodata/${studentClass}/${slide}.JPG`" class="border-8 border-yellow-400" />
+        <nuxt-img :src="`yearbook/foto-biodata/${studentClass}/${slide}.JPG`" class="border-8 border-yellow-400 pointer-events-none" />
       </SwiperSlide>
       <SwiperSlide v-if="!isMobile"></SwiperSlide>
     </Swiper>

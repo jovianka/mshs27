@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 :root {
   --swiper-theme-color: rgb(219, 189, 39) !important;
-
   --swiper-navigation-size: 1.5rem !important;
 
 }
@@ -9,12 +8,16 @@
 body {
   background-color: #030303; /* fallback for old browsers */
   color: rgba(255, 255, 255, 0.65);
-  /* cursor: none; */
+  cursor: none;
 }
 
 @font-face {
   font-family: "Code Next";
   src: url("../fonts/CodeNext/WEB/CodeNext-ExtraBold.woff2") format("woff2");
+}
+
+.swiper-button-next:hover, .swiper-button-prev:hover {
+  cursor: none;
 }
 
 /* Animations */

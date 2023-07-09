@@ -58,6 +58,7 @@
             </FormKit>
           </div>
         </section>
+        <CursorTrailer />
       </main>
     </template>
 
