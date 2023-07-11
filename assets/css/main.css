@@ -2,6 +2,7 @@
 :root {
   --swiper-theme-color: rgb(219, 189, 39) !important;
   --swiper-navigation-size: 1.5rem !important;
+  --swiper-navigation-offset-x: 5rem !important;
 
 }
 

@@ -20,6 +20,7 @@
     "@formkit/nuxt": "^0.16.4",
     "@formkit/themes": "^0.16.4",
     "@nuxt/image-edge": "^1.0.0-28020728.5df24eb",
+    "fontawesome-free": "^1.0.4",
     "nuxt-swiper": "^1.1.0",
     "three": "^0.152.2"
   }

@@ -1,45 +1,67 @@
 <template>
   <div v-if="isDesktop" ref="cursorTrailersWrapper">
-    <div class="cursorTrailer rounded-full bg-white w-9 h-9 fixed z-[1010] pointer-events-none shadow-[gold_0_0_10px_2px]"></div>
-    <div class="cursorTrailer rounded-full bg-white w-9 h-9 fixed z-[1009] pointer-events-none shadow-[gold_0_0_10px_2px]"></div>
-    <div class="cursorTrailer rounded-full bg-white w-9 h-9 fixed z-[1008] pointer-events-none shadow-[gold_0_0_10px_2px]"></div>
-    <div class="cursorTrailer rounded-full bg-white w-9 h-9 fixed z-[1007] pointer-events-none shadow-[gold_0_0_10px_2px]"></div>
-    <div class="cursorTrailer rounded-full bg-white w-9 h-9 fixed z-[1006] pointer-events-none shadow-[gold_0_0_10px_2px]"></div>
-    <div class="cursorTrailer rounded-full bg-white w-9 h-9 fixed z-[1005] pointer-events-none shadow-[gold_0_0_10px_2px]"></div>
-    <div class="cursorTrailer rounded-full bg-white w-9 h-9 fixed z-[1004] pointer-events-none shadow-[gold_0_0_10px_2px]"></div>
-    <div class="cursorTrailer rounded-full bg-white w-9 h-9 fixed z-[1003] pointer-events-none shadow-[gold_0_0_10px_2px]"></div>
-    <div class="cursorTrailer rounded-full bg-white w-9 h-9 fixed z-[1002] pointer-events-none shadow-[gold_0_0_10px_2px]"></div>
-    <div class="cursorTrailer rounded-full bg-white w-9 h-9 fixed z-[1001] pointer-events-none shadow-[gold_0_0_10px_2px]"></div>
+    <div class="flex justify-center items-center cursorTrailer rounded-full bg-white w-9 h-9 fixed z-[1011] pointer-events-none"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="cursorTrailer z-[1010] -scale-x-100 fixed pointer-events-none" viewBox="0 0 16 16">
+      <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103zM2.25 8.184l3.897 1.67a.5.5 0 0 1 .262.263l1.67 3.897L12.743 3.52 2.25 8.184z"/>
+    </svg>
+    <div class="cursorTrailer rounded-full bg-white w-2 h-2 fixed z-[1009] pointer-events-none shadow-[gold_0_0_10px_0px]"></div>
+    <div class="cursorTrailer rounded-full bg-white w-2 h-2 fixed z-[1008] pointer-events-none shadow-[gold_0_0_10px_0px]"></div>
+    <div class="cursorTrailer rounded-full bg-white w-2 h-2 fixed z-[1007] pointer-events-none shadow-[gold_0_0_10px_0px]"></div>
+    <div class="cursorTrailer rounded-full bg-white w-2 h-2 fixed z-[1006] pointer-events-none shadow-[gold_0_0_10px_0px]"></div>
+    <div class="cursorTrailer rounded-full bg-white w-2 h-2 fixed z-[1005] pointer-events-none shadow-[gold_0_0_10px_0px]"></div>
+    <div class="cursorTrailer rounded-full bg-white w-2 h-2 fixed z-[1004] pointer-events-none shadow-[gold_0_0_10px_0px]"></div>
+    <div class="cursorTrailer rounded-full bg-white w-2 h-2 fixed z-[1003] pointer-events-none shadow-[gold_0_0_10px_0px]"></div>
+    <div class="cursorTrailer rounded-full bg-white w-2 h-2 fixed z-[1002] pointer-events-none shadow-[gold_0_0_10px_0px]"></div>
   </div>
 </template>
 
 <script setup lang="ts">
   const { isDesktop } = useDevice()
-  let mouseX = ref(0)
-  let mouseY = ref(0)
-  const cursorTrailersWrapper = ref<HTMLDivElement | null>(null)
+  const mouseX = ref(0)
+  const mouseY = ref(0)
+  const mouseIsInteracting = ref(false)
+  const cursorTrailersWrapper = ref<HTMLElement | null>(null)
   
   const animateCursorTrailers = (e?: MouseEvent) => {
     if (cursorTrailersWrapper.value) {
       const cursorTrailers = cursorTrailersWrapper.value.querySelectorAll(".cursorTrailer")
       const mouseTarget = e?.target as HTMLElement
+      mouseIsInteracting.value = mouseTarget.closest("a") !== null ? true : false
 
-      cursorTrailers.forEach((cursorTrailer, arrIndex) => {
-        let trailingCursorDelay = {
-          left: `${mouseX.value}px`,
-          top: `${mouseY.value}px`,
-          transform: `scale(${(10 - arrIndex) / 10})`,
-          opacity: `${mouseTarget.closest("a, .swiper-button-next, .swiper-button-prev") !== null ? 0.2: 1}`
+      // MAIN CURSOR
+      const mainCursor = cursorTrailers[1]
+      mainCursor.animate({
+        left: `${mouseX.value}px`,
+        top: `${mouseY.value}px`,
+        opacity: `${mouseIsInteracting.value ? 0 : 1}`
+      }, {duration: 0, fill: "forwards"})
+
+      // SMART CURSOR TRAILER
+      const smartCursorTrailer = cursorTrailers[0]
+
+      let trailingCursorAnimation: PropertyIndexedKeyframes
+      let smartCursorTrailerAnimation: PropertyIndexedKeyframes = {
+        left: `${mouseX.value - 20}px`,
+        top: `${mouseY.value - 20}px`,
+        transform: `scale(${mouseIsInteracting.value ? 2 : 0})`,
+        mixBlendMode: `${mouseIsInteracting.value ? "difference" : "normal"}`
+      }
+      
+      smartCursorTrailer.animate(smartCursorTrailerAnimation, {duration: 300, fill: "forwards"})
+
+      // CURSOR TRAILERS
+      for (let i = 2; i < 10; i++) {
+        trailingCursorAnimation = {
+          left: `${mouseX.value + 20}px`,
+          top: `${mouseY.value + 20}px`,
+          opacity: `${mouseIsInteracting.value ? 0 : 1}`
         }
-        
-        cursorTrailer.animate(trailingCursorDelay, {
-          duration: arrIndex * 15,
+        cursorTrailers[i].animate(trailingCursorAnimation,{
+          duration: i * 40,
           fill: "forwards"
         })
-      })
-      // if (interacting) {
-      //   cursorTrailers[0].animate({opacity: 50}, {duration: 300})
-      // }
+      }
+
     }
   }
 

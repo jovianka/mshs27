@@ -29,6 +29,12 @@ export default defineNuxtConfig({
       title: "Hirallaxe | MSHS 27",
       viewport:"width=device-width, initial-scale=1",
       charset: "utf-8",
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+        }
+      ],
       meta: [
         { name: "description", content: "The official MSHS 27 Website" },
         { name: "author", content: "Jovianka Pratama" },
