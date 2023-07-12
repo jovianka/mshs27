@@ -26,6 +26,10 @@ module.exports = {
         display: "Code Next",
         script: "Dancing Script",
         body: "Lora"
+      },
+      colors: {
+        accent1: "#DBC07A",
+        accent2: "#670404"
       }
     },
   },

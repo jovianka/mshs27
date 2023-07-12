@@ -36,7 +36,10 @@
           <li class="font-display tracking-wide mb-5 md:mb-8">
             <NuxtLink
               to="https://docs.google.com/document/d/1RNJJEcTj_XH1xvNXYFQpwxQ-v8lUQjn2FKi_3XZtnq8/edit?usp=sharing"
-              class="cursor-none focus:text-white/90 hover:text-white/90 lg:hover:pl-5 lg:focus:pl-5 transition-all flex justify-center lg:justify-start items-center whitespace-nowrap"
+              class="cursor-none focus:text-white/90 hover:text-white/90
+              lg:hover:pl-5 lg:focus:pl-5 transition-all
+              flex justify-center lg:justify-start items-center
+              whitespace-nowrap max-w-max"
               target="_blank" rel="noopener noreferrer">
               Attributions
               <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-box-arrow-up-right ml-3 w-6 h-6" viewBox="0 0 16 16">
